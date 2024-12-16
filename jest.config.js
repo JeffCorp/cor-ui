@@ -7,5 +7,5 @@ module.exports = {
     '\\.css$': 'identity-obj-proxy'
   },
   testRegex: '(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', 'css']
 };

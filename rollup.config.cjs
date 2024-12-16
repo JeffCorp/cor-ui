@@ -5,6 +5,8 @@ const postcss = require("rollup-plugin-postcss");
 const dts = require("rollup-plugin-dts").default;
 const svgr = require("@svgr/rollup");
 const url = require("@rollup/plugin-url");
+const copy = require('rollup-plugin-copy');
+const {customCssResolver} = require('./cssResolver.cjs');
 
 module.exports = [
   {
@@ -29,9 +31,36 @@ module.exports = [
         outDir: "./dist",
         declarationDir: "./dist"
       }),
-      postcss(),
+      postcss({
+        extensions: ['.css'],
+        extract: true,
+        minimize: true,
+        modules: false,
+        extract: 'styles.css'
+      }),
+      // copy({
+      //   targets: [
+      //     { 
+      //       src: 'src/components/Fonts/fonts/*',
+      //       dest: 'dist/assets/fonts'
+      //     },
+      //     {
+      //       src: 'src/components/Fonts/Fonts.css',
+      //       dest: 'dist/styles',
+      //       transform: (contents) => 
+      //         contents
+      //           .toString()
+      //           .replace(
+      //             /url\(['"]?\.\/fonts\//g, 
+      //             'url(\'../assets/fonts/'
+      //           )
+      //     }
+      //   ],
+      //   hook: 'writeBundle'
+      // }),
       svgr(),
-      url()
+      url(),
+      customCssResolver()
     ]
   },
   {
