@@ -3,7 +3,7 @@ import './Fonts.css';
 
 export interface FontDisplayProps {
   children?: React.ReactNode;
-  fontWeight?: 'normal' | 'bold';
+  fontWeight?: number | 'normal' | 'bold';
   fontStyle?: 'normal' | 'italic';
   fontSize?: number;
   component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';

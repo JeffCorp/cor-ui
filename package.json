@@ -1,6 +1,6 @@
 {
   "name": "@jeffcorp/cor-ui",
-  "version": "0.0.22",
+  "version": "0.0.37",
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
@@ -48,7 +48,8 @@
   "files": [
     "dist",
     "dist/styles",
-    "dist/assets"
+    "dist/assets",
+    "src/components/Icons/fill/*.svg"
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {

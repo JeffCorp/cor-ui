@@ -13,6 +13,7 @@
     "emitDeclarationOnly": true,
     "skipLibCheck": true,
     "target": "es5",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declarationMap": true
   }
 }

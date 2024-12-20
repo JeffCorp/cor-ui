@@ -1,0 +1,21 @@
+.flex {
+    display: flex;
+}
+
+.nav-container {
+    display: flex;
+    gap: 40px;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-container>nav {
+    display: flex;
+    gap: 5px
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}

@@ -11,16 +11,25 @@ const {customCssResolver} = require('./cssResolver.cjs');
 module.exports = [
   {
     input: "src/index.ts",
+    // external: ['react', 'react-dom'],
     output: [
       {
         file: "dist/index.cjs.js",
         format: "cjs",
-        sourcemap: false,
+        sourcemap: true,
+        // globals: {
+        //   react: 'React',
+        //   'react-dom': 'ReactDOM'
+        // }
       },
       {
         file: "dist/index.esm.js",
         format: "esm",
-        sourcemap: false,
+        sourcemap: true,
+        // globals: {
+        //   react: 'React',
+        //   'react-dom': 'ReactDOM'
+        // }
       }
     ],
     plugins: [
@@ -29,14 +38,15 @@ module.exports = [
       typescript({
         tsconfig: "./tsconfig.json",
         outDir: "./dist",
-        declarationDir: "./dist"
+        declarationDir: "./dist",
+        declaration: true,
+        declarationMap: true
       }),
       postcss({
         extensions: ['.css'],
-        extract: true,
-        minimize: true,
-        modules: false,
-        extract: 'styles.css'
+        modules: true,
+        inject: true,
+        minimize: true
       }),
       // copy({
       //   targets: [
@@ -64,8 +74,8 @@ module.exports = [
     ]
   },
   {
-    external: [/\.css$/],
-    input: "dist/index.esm.js",
+    external: [/\.css$/, /\.(js|mjs|json|node)$/],
+    input: "src/index.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
   },

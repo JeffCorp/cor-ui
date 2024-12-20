@@ -1,0 +1,60 @@
+/* Badge */
+.badge {
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* Style */
+.outline {
+
+}
+
+.bold {
+
+}
+
+.subtle {
+
+}
+
+/* Size */
+.small {
+    padding: 5px 8px;
+}
+
+.medium {
+    padding: 2px 8px;
+}
+
+.large {
+    padding: 4px 8px;
+}
+
+/* Color */
+.purple {
+    background: #B580D1;
+    color: #FFFFFF;
+}
+
+.yellow {
+    background: #FFDA25;
+    color: #000000;
+}
+
+.red {
+    background: #FF0226;
+    color: #FFFFFF;
+}
+
+.green {
+    background: #73C934;
+    color: #FFFFFF;
+}
+
+.neutral {
+    background: #242529;
+    color: #FFFFFF;
+}
