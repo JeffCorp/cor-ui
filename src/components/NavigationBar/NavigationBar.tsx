@@ -4,7 +4,6 @@ import {Button} from "../Button";
 import { Colors } from "../Colors";
 import "./NavigationBar.css";
 import { Typography } from "../Fonts";
-import { Icon } from "../Icons";
 
 interface ActionProps {
   name: string;

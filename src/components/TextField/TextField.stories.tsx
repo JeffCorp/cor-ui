@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import TextField from "./TextField";
-import Icon from "../Icons/Icon";
+import { Icon } from "@jeffcorp/cor-ui-icons";
 import { Colors } from "../Colors";
 
 const meta: Meta<typeof TextField> = {

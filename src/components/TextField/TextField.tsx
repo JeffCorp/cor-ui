@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./TextField.css";
 import { Typography } from "../Fonts";
-import { Icon } from "../Icons";
+import { Icon } from "@jeffcorp/cor-ui-icons";
 import { Colors } from "../Colors";
 
 interface HelperTextProps {
@@ -20,10 +20,10 @@ interface TextFieldProps {
   placeholder?: string;
   label?: HelperTextProps;
   hint?: HelperTextProps;
-  selectorPrefix: SelectorPrefixProps;
-  select: SelectorPrefixProps;
-  outlineColor: string;
-  backgroundColor: string;
+  selectorPrefix?: SelectorPrefixProps;
+  select?: SelectorPrefixProps;
+  outlineColor?: string;
+  backgroundColor?: string;
   prefixIcon?: React.JSX.Element;
   suffixIcon?: React.JSX.Element;
   onChange?: (e: any) => void;
@@ -54,11 +54,9 @@ const TextField = ({
 
   return (
     <div>
-      {/* {(type === "password" ?? label) && ( */}
-        <Typography style={{ color: label?.color }}>
-          {type === "password" ? "Password" : label?.text}
-        </Typography>
-      {/* )} */}
+      <Typography style={{ color: label?.color }}>
+        {type === "password" ? "Password" : label?.text}
+      </Typography>
       {select ? (
         <div>
           <div
@@ -90,11 +88,15 @@ const TextField = ({
                 borderRadius: "8px",
                 position: "fixed",
                 border: `1px solid ${Colors.primary.gray.neutral200}`,
-                minWidth: "200px"
+                minWidth: "200px",
               }}
             >
               {select.list.map((item, i) => (
-                <div className="clickable selector-item" key={i} style={{ padding: "10px", width: "200px" }}>
+                <div
+                  className="clickable selector-item"
+                  key={i}
+                  style={{ padding: "10px", width: "200px" }}
+                >
                   <Typography>{item.label}</Typography>
                 </div>
               ))}

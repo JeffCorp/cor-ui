@@ -16,7 +16,7 @@ module.exports = [
       {
         file: "dist/index.cjs.js",
         format: "cjs",
-        sourcemap: true,
+        sourcemap: false,
         // globals: {
         //   react: 'React',
         //   'react-dom': 'ReactDOM'
@@ -25,7 +25,7 @@ module.exports = [
       {
         file: "dist/index.esm.js",
         format: "esm",
-        sourcemap: true,
+        sourcemap: false,
         // globals: {
         //   react: 'React',
         //   'react-dom': 'ReactDOM'
@@ -40,7 +40,8 @@ module.exports = [
         outDir: "./dist",
         declarationDir: "./dist",
         declaration: true,
-        declarationMap: true
+        declarationMap: true,
+        sourceMap: true
       }),
       postcss({
         extensions: ['.css'],

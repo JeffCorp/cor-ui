@@ -1,7 +1,7 @@
 import React from "react";
 import "./Badge.css";
 import { Typography } from "../Fonts";
-import { Icon } from "../Icons";
+import { Icon } from "@jeffcorp/cor-ui-icons";
 import { Colors } from "../Colors";
 
 interface BadgeProps {

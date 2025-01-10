@@ -1,5 +1,6 @@
 import React from 'react';
 import './Fonts.css';
+import { Colors } from '../Colors';
 
 export interface FontDisplayProps {
   children?: React.ReactNode;
@@ -12,7 +13,7 @@ export interface FontDisplayProps {
 }
 
 const Typography = ({
-  children = 'Lato Font Example',
+  children = '',
   fontWeight = 'normal',
   fontStyle = 'normal',
   fontSize = 16,
@@ -25,6 +26,7 @@ const Typography = ({
     fontWeight: fontWeight === 'bold' ? 700 : 400,
     fontStyle,
     fontSize: `${fontSize}px`,
+    color: Colors.primary.base.black,
     ...style,
   };
 

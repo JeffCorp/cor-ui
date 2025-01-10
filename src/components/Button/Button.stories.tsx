@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test'; 
 import Button from './Button';
 import { Colors } from '../Colors';
-import { Icon } from '../Icons';
+import { Icon } from '@jeffcorp/cor-ui-icons';
 
 const meta: Meta<typeof Button> = {
   title: 'Design System/Button',
