@@ -27,6 +27,7 @@ interface TextFieldProps {
   prefixIcon?: React.JSX.Element;
   suffixIcon?: React.JSX.Element;
   onChange?: (e: any) => void;
+  onSelectorPrefixChange?: (e: any) => void;
   style?: React.CSSProperties;
 }
 
@@ -43,6 +44,7 @@ const TextField = ({
   suffixIcon,
   onChange,
   style,
+  onSelectorPrefixChange,
   ...props
 }: TextFieldProps) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -120,7 +122,7 @@ const TextField = ({
             </div>
           ) : selectorPrefix ? (
             <div className="input-prefix-icon">
-              <select>
+              <select onChange={onSelectorPrefixChange}>
                 {selectorPrefix.list.map((item, i) => (
                   <option key={i} value={item.value}>
                     {item.label}
